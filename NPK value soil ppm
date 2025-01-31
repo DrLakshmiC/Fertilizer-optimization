@@ -1,0 +1,81 @@
+# Fertilizer Usage Optimizer
+
+# Function to input soil nutrient values
+def get_soil_data():
+    print("Enter the soil nutrient levels:")
+    nitrogen = float(input("Nitrogen (N) - ppm: "))
+    phosphorus = float(input("Phosphorus (P) - ppm: "))
+    potassium = float(input("Potassium (K) - ppm: "))
+    ph_level = float(input("Soil pH level: "))
+    organic_matter = float(input("Organic Matter Content (%): "))
+
+    return nitrogen, phosphorus, potassium, ph_level, organic_matter
+
+# Function to determine fertilizer recommendation based on soil data
+def fertilizer_recommendation(nitrogen, phosphorus, potassium, ph_level, organic_matter):
+    recommended_fertilizer = ""
+
+    # Check soil nutrients and recommend fertilizer type (simplified logic)
+    if nitrogen < 30:
+        recommended_fertilizer += "Increase Nitrogen, "
+    if phosphorus < 15:
+        recommended_fertilizer += "Increase Phosphorus, "
+    if potassium < 20:
+        recommended_fertilizer += "Increase Potassium, "
+
+    # Check soil pH
+    if ph_level < 6.0:
+        recommended_fertilizer += "Increase pH (add lime), "
+    elif ph_level > 7.5:
+        recommended_fertilizer += "Decrease pH (add sulfur), "
+
+    # Organic matter consideration
+    if organic_matter < 3.0:
+        recommended_fertilizer += "Increase Organic Matter (add compost), "
+
+    # Remove trailing comma and space
+    recommended_fertilizer = recommended_fertilizer.rstrip(", ")
+
+    if recommended_fertilizer == "":
+        recommended_fertilizer = "Your soil nutrients are balanced. No immediate fertilizer required."
+
+    return recommended_fertilizer
+
+# Function to calculate fertilizer amount (simple model)
+def calculate_fertilizer_amount(nitrogen, phosphorus, potassium):
+    # Assume for simplicity:
+    # Nitrogen: 1 kg per 100 m² if below 30 ppm
+    # Phosphorus: 1.5 kg per 100 m² if below 15 ppm
+    # Potassium: 1.2 kg per 100 m² if below 20 ppm
+    fertilizer_amount = 0
+    if nitrogen < 30:
+        fertilizer_amount += 1  # kg per 100 m²
+    if phosphorus < 15:
+        fertilizer_amount += 1.5  # kg per 100 m²
+    if potassium < 20:
+        fertilizer_amount += 1.2  # kg per 100 m²
+
+    return fertilizer_amount
+
+# Main function to run the optimizer
+def fertilizer_optimizer():
+    print("Welcome to the Fertilizer Usage Optimizer!")
+
+    # Get soil data from user
+    nitrogen, phosphorus, potassium, ph_level, organic_matter = get_soil_data()
+
+    # Get fertilizer recommendations
+    recommendation = fertilizer_recommendation(nitrogen, phosphorus, potassium, ph_level, organic_matter)
+
+    # Calculate the required fertilizer amount (simplified)
+    fertilizer_amount = calculate_fertilizer_amount(nitrogen, phosphorus, potassium)
+
+    # Display the recommendations
+    print("\nFertilizer Recommendations:")
+    print(recommendation)
+    print(f"\nRecommended Fertilizer Amount: {fertilizer_amount} kg per 100 m²")
+
+# Run the optimizer
+fertilizer_optimizer()
+
+Sample output
