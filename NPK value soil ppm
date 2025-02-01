@@ -1,3 +1,92 @@
+Problem statement
+Background: Excessive and improper use of fertilizers leads to soil degradation and reduced agricultural productivity, negatively impacting farmers’ income. 
+Description: Create a data-driven solution that recommends optimal fertilizer types and quantities based on soil health, crop type, and weather patterns, ensuring sustainable agricultural practices.
+Expected Solution: An application that analyzes soil data and provides tailored fertilizer recommendations, promoting sustainable farming while enhancing crop yield and farmer income.
+
+Flow Diagram
++----------------------------------------------------+
+|                  Initialization            |
++----------------------------------------------------+
+                         |
+                         v
+          +-----------------------------+
+          |  Collect User Data (Inputs)  |
+          |-----------------------------|
+          | - Soil Data (N, P, K, pH)    |
+          | - Weather Data (Rain, Temp)  |
+          | - Crop Type & Growth Stage   |
+          +-----------------------------+
+                         |
+                         v
+          +---------------------------------------+
+          |  Data Preprocessing / Normalization   |
+          |---------------------------------------|
+          | - Process Soil, Weather, Crop Info    |
+          | - Normalize input data if needed     |
+          | - Generate any derived metrics       |
+          +---------------------------------------+
+                         |
+                         v
+          +--------------------------------------+
+          |  Calculate Nutrient Requirements    |
+          |--------------------------------------|
+          | - Crop nutrient needs (N, P, K)      |
+          | - Apply growth stage-specific data  |
+          +--------------------------------------+
+                         |
+                         v
+          +----------------------------------------+
+          |  Select Fertilizer Options            |
+          |----------------------------------------|
+          | - List available fertilizers          |
+          | - Fertilizer composition (N, P, K)    |
+          | - Cost of fertilizers                 |
+          | - Application methods (broadcast, etc)|
+          +----------------------------------------+
+                         |
+                         v
+          +----------------------------------------+
+          |  Optimization Algorithm (Linear Prog) |
+          |----------------------------------------|
+          | - Set constraints for fertilizer use  |
+          | - Minimize cost while maximizing yield |
+          | - Solve for optimal fertilizer amounts |
+          +----------------------------------------+
+                         |
+                         v
+          +----------------------------------------+
+          |  Sustainability Analysis              |
+          |----------------------------------------|
+          | - Assess nitrogen use efficiency      |
+          | - Estimate environmental impact (e.g. |
+          |   nutrient runoff, emissions)         |
+          +----------------------------------------+
+                         |
+                         v
+          +----------------------------------------+
+          |  Generate Fertilizer Recommendation   |
+          |----------------------------------------|
+          | - Optimal amount & timing of fert.     |
+          | - Sustainability report               |
+          | - Total fertilizer cost               |
+          +----------------------------------------+
+                         |
+                         v
+          +----------------------------------------+
+          |  Provide Results to User              |
+          |----------------------------------------|
+          | - Display recommendations (e.g.,       |
+          |   kg/ha fertilizer, method, timing)    |
+          | - Show cost breakdown and impact      |
+          +----------------------------------------+
+                         |
+                         v
+          +------------------------------+
+          |  End  |
+          +------------------------------+
+
+NPK Calculation
+
 # Fertilizer Usage Optimizer
 
 # Function to input soil nutrient values
@@ -78,7 +167,7 @@ def fertilizer_optimizer():
 # Run the optimizer
 fertilizer_optimizer()
 
-Sample output
+Simulation Results
 Welcome to the Fertilizer Usage Optimizer!
 Enter the soil nutrient levels:
 Nitrogen (N) - ppm: 10
