@@ -79,3 +79,14 @@ def fertilizer_optimizer():
 fertilizer_optimizer()
 
 Sample output
+Welcome to the Fertilizer Usage Optimizer!
+Enter the soil nutrient levels:
+Nitrogen (N) - ppm: 10
+Phosphorus (P) - ppm: 20
+Potassium (K) - ppm: 100
+Soil pH level: 6
+Organic Matter Content (%): 40
+Fertilizer Recommendations:
+Increase Nitrogen
+Recommended Fertilizer Amount: 1 kg per 100 m²
+
